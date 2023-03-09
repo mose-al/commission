@@ -1,0 +1,34 @@
+#class
+class Employee:
+    def _init_ (self,name,id):
+         self.name =name
+         self.id=id
+    def display_employee_details(self):
+       print("name:",self.name)
+       print("ID:",self.id)
+class SalaryEmployee(Employee):
+    def _init_(self,nam,id,annual_salary):
+        super()._init_(name,id)
+        self.annual_salary=annual_salary
+    def calculate_payroll(self):
+            return self.annual_salary/12
+class HourlyEmployee(Employee):
+    def _init_(self,name,id,hourly_rate,hours_worked):
+        super()._init_(name,id)
+        self.hourly_rate=hourly_rate
+        self.hours_worked=hours_worked
+    def calculate_payroll(self):
+            return self.hourly_rate*self.hours_worked
+class CommissionEmployee(SalaryEmployee):
+    def _init_(self,name,id,annual_salary,commission_ratesales):
+        super()._init_(name,id,annual_salary)
+        self.commission_rate =commissionrate
+        self.sales=sales
+    def calculate_payroll(self):
+            commission=self.commission_rate*self.sales
+            return super().calculate_payroll()+commission
+                        
+            
+            
+    
+            
